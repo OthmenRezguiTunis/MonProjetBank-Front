@@ -5,17 +5,29 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DetailsCompteComponent } from './details-compte/details-compte.component';
+const tableroutage = [
+{path : 'comptes' , component : ContentComponent},
+{path : '' , component : WelcomeComponent},
+{path : 'comptes/:id' , component : DetailsCompteComponent}
 
+
+];
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    WelcomeComponent,
+    DetailsCompteComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(tableroutage)
   ],
   providers: [],
   bootstrap: [AppComponent]
