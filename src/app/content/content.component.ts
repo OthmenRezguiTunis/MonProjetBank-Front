@@ -15,7 +15,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
 
- this.data = this._service.getAllComptes() ;
+this._service.getAllComptes().subscribe(res=>this.data= res) ;
   }
 
 }

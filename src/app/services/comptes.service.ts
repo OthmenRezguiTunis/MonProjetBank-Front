@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Compte } from '../domain/compte';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,17 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ComptesService {
 
+  private url = 'http://localhost:5135/api/Comptes';
   constructor(private _http: HttpClient) { }
 
-  getAllComptes():    Observable Compte[] {
+  getAllComptes():    Observable<Compte[]> {
+
+    return this._http.get<Compte[]>(this.url);
 
 
-// return [
-//   {'numero' : 'SSFake001', proprietaire: 'FakeProprio1' , 'solde': 1111},
-//   {'numero' : 'Fake002', proprietaire: 'FakeProprio2' , 'solde': 1111},
-//   {'numero' : 'Fake003', proprietaire: 'FakeProprio3' , 'solde': 1111},
-//   {'numero' : 'Fake004', proprietaire: 'FakeProprio4' , 'solde': 1111}
-// ];
 
 
   }
