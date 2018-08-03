@@ -1,0 +1,43 @@
+<div class="card mt-2 ">
+  <div class="card-header bg-info primary text-white">
+<h4>Liste des comptes </h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Numero de compte</th>
+          <th> Proprietaire </th>
+          <th> Solde </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let c of data">
+          <td scope="row">{{c.numero}}</td>
+          <td>{{c.proprietaire}}</td>
+          <td>{{c.solde}}</td>
+
+          <td><button type = "button" class = "btn btn-sm btn-info" >Details</button>
+            <button type = "button" class = "btn btn-sm btn-secondary ml-1" >Edit</button>
+            <button type = "button" class = "btn btn-sm btn-danger ml-1" >Delete</button>
+
+
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+<ul>
+
+
+</ul>
+
